@@ -20,7 +20,6 @@ module.exports = {
   // create a post -----------------
   createPost: async (req, res) => {
     let fileName;
-    console.log(req.file);
     if (req.file !== undefined) {
       try {
         if (
