@@ -30,6 +30,6 @@ Ou lancer les deux en même temps : `npm run dev`
 
 ---
 
-![Texte alternatif](./client/public/img/screenshotd.jpg "Capture d'écran")
+![Texte alternatif](./client/public/img/screenshotd.png "Capture d'écran")
 
 💻 Réalisé par Giovan Hamadaïne, novembre 2023. Libre d'utilisation
