@@ -14,6 +14,7 @@ const UploadImg = () => {
     data.append("file", file);
 
     dispatch(uploadPicture(data, userData._id));
+    window.location.reload();
   };
   return (
     <form action="" onSubmit={handlePicture} className="upload-pic">

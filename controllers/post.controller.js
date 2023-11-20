@@ -5,6 +5,7 @@ const fs = require("fs");
 const { promisify } = require("util");
 const pipeline = promisify(require("stream").pipeline);
 const { Readable } = require("stream");
+const { uploadErrors } = require("../utils/errors.utils");
 
 module.exports = {
   // get all posts --------------
@@ -19,7 +20,8 @@ module.exports = {
   // create a post -----------------
   createPost: async (req, res) => {
     let fileName;
-    if (req.file !== null) {
+    console.log(req.file);
+    if (req.file !== undefined) {
       try {
         if (
           req.file.mimetype != "image/jpg" &&
@@ -61,11 +63,10 @@ module.exports = {
         });
     }
 
-    console.log(req.body);
     const newPost = new postModel({
       posterId: req.body.posterId,
       message: req.body.message,
-      picture: req.file !== null ? "./uploads/post/" + fileName : "",
+      picture: req.file !== undefined ? "./uploads/post/" + fileName : "",
       video: req.body.video,
     });
 
