@@ -19,11 +19,6 @@ app.use(cookieParser());
 // Servir les fichiers statiques
 app.use(express.static(path.join(__dirname, "client/build")));
 
-// Gérer les requêtes React (pour le Single Page Application)
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/build", "index.html"));
-});
-
 // jwt
 app.get("*", checkUser);
 app.get("/jwtid", requireAuth, (req, res) => {
@@ -33,6 +28,10 @@ app.get("/jwtid", requireAuth, (req, res) => {
 //routes
 app.use("/api/user", userRoutes);
 app.use("/api/post", postRoutes);
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
 
 //server
 app.listen(port, () => {

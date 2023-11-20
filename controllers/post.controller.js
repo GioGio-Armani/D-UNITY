@@ -38,7 +38,7 @@ module.exports = {
 
       fileName = req.body.posterId + Date.now() + ".jpg";
 
-      const uploadPath = __dirname + "/../client/public/uploads/post/";
+      const uploadPath = __dirname + "/../client/build/uploads/post/";
       if (!fs.existsSync(uploadPath)) {
         fs.mkdirSync(uploadPath, { recursive: true });
       }
