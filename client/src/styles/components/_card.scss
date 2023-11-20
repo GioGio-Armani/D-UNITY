@@ -1,13 +1,14 @@
 .card-container {
   display: grid;
   grid-template-columns: 66px 1fr;
-  border: 2px solid $color-2;
+  border: 2px solid $color-1;
   margin: 10px;
   padding: 16px;
   border-radius: 20px;
   margin: 8px auto;
   position: relative;
   min-height: 100px;
+  background-color: $color-4;
 
   @media screen and (max-width: 590px) {
     grid-template-columns: 1fr;
@@ -123,18 +124,18 @@
     .update-post {
       textarea {
         font-size: 1.3rem;
-        border: 1px solid $color-2;
+        border: 1px solid $color-1;
         padding: 10px;
         border-radius: 20px 20px 6px 20px;
       }
       .button-container {
         .btn {
-          background: $color-2;
+          background: $color-1;
           width: 240px;
           transform: translateY(-3px);
 
           &:hover {
-            background: $color-1;
+            background: $color-1-2;
             width: 250px;
             letter-spacing: 1px;
           }
@@ -161,7 +162,7 @@
       div {
         padding: 5px 9px;
         margin-left: 5px;
-        background: $color-2;
+        background: $color-1;
         border-radius: 50px;
         transition: 0.1s;
         cursor: pointer;
@@ -200,6 +201,7 @@
         align-items: center;
 
         span {
+          color: $color-2;
           font-size: 1.02rem;
           position: absolute;
           transform: translate(29px, 2px);
@@ -207,14 +209,13 @@
       }
     }
     .comment-container.client {
-      background: $color-4;
-      border: none;
+      border: 2px solid $color-1;
       border-radius: 20px 20px 6px 20px;
     }
     .comment-container {
       display: grid;
       grid-template-columns: 50px 1fr;
-      border: 1px solid $color-2;
+      border: 2px solid $color-2;
       padding: 15px;
       margin: 5px 0;
       border-radius: 20px 20px 20px 6px;
@@ -267,7 +268,7 @@
         margin-top: 8px;
       }
       .edit-comment {
-        color: $color-2;
+        color: $color-3;
         img {
           float: right;
           margin-left: 10px;
@@ -285,8 +286,8 @@
         .edit-comment-form {
           margin-top: 14px;
           label {
-            background: $white;
-            color: $color-1;
+            background: $color-1;
+            color: $color-3;
             padding: 6px 12px 5px;
             border-radius: 20px 20px 20px 6px;
             cursor: pointer;
@@ -300,7 +301,7 @@
           }
           input[type="text"] {
             margin: 4px 0;
-            background: $white;
+            background: $color-3;
             font-size: 1.15rem;
             padding: 16px;
             width: 100%;
@@ -312,7 +313,7 @@
             float: right;
 
             span {
-              background: $white;
+              background: $color-1;
               padding: 10px 5px;
               border-radius: 50px;
               margin-right: 6px;
@@ -320,7 +321,7 @@
               cursor: pointer;
 
               &:hover {
-                background: $color-2;
+                background: $color-1-2;
               }
 
               img {
@@ -328,13 +329,13 @@
               }
             }
             input[type="submit"] {
-              background: $color-2;
+              background: $color-1;
               width: inherit;
               transition: 0.2s;
 
               &:hover {
                 width: inherit;
-                background: $color-1;
+                background: $color-1-2;
               }
             }
           }
@@ -346,7 +347,7 @@
 
       input[type="text"] {
         width: 100%;
-        background: $color-4;
+        background: $color-3;
         border-radius: 20px 20px 6px 20px;
         padding: 20px;
         font-size: 1.4rem;
@@ -359,13 +360,13 @@
         margin-top: 4px;
         padding: 12px 16px;
         width: 120px;
-        background: $color-2;
+        background: $color-1;
         border-radius: 20px 6px 20px 20px;
         transition: 0.2s;
         float: right;
 
         &:hover {
-          background: $color-1;
+          background: $color-1-2;
           letter-spacing: 2px;
           width: 130px;
         }

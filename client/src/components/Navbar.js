@@ -13,8 +13,7 @@ const Navbar = () => {
         <div className="logo">
           <NavLink to="/">
             <div className="logo">
-              <img src="./img/icon.png" alt="icon" />
-              <h3>D-UNITY</h3>
+              <img src="./img/icons/logo.png" alt="logo" />
             </div>
           </NavLink>
         </div>

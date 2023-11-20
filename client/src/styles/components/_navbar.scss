@@ -3,7 +3,7 @@ nav {
   width: 100%;
   height: 45px;
   border-radius: 6px;
-  box-shadow: 18px 1px 0px $color-1, 22px 4px 0px 0px $shadow;
+  box-shadow: 18px 1px 0px $color-1, 22px 4px 0px 0px $color-1;
   z-index: 10;
   top: 0;
 
@@ -19,7 +19,7 @@ nav {
     top:0;
     position: absolute;
     backdrop-filter: blur(3px);
-    background: rgba(255, 255, 255, 0.86);
+    background: $color-4;
     z-index: -8;
   }
 
@@ -42,8 +42,8 @@ nav {
         font-family: $font-3;
       }
       img {
-        height: 26px;
-        width: 26px;
+        object-fit: cover;
+        height: 60px;
       }
     }
     
