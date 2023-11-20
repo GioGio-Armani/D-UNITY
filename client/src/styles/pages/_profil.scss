@@ -176,6 +176,7 @@
           transform: translate(-3px, -50%);
           cursor: pointer;
           padding: 10px 20px;
+          color: $black;
 
           @media screen and (max-width: 1121px) {
             opacity: 0;
