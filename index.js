@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv").config();
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
+const path = require("path");
 
 const userRoutes = require("./routes/user.routes");
 const postRoutes = require("./routes/post.routes");
@@ -15,6 +16,13 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+// Servir les fichiers statiques
+app.use(express.static(path.join(__dirname, "client/build")));
+
+// Gérer les requêtes React (pour le Single Page Application)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
 
 // jwt
 app.get("*", checkUser);
