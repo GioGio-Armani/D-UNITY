@@ -90,7 +90,7 @@ const Card = ({ post }) => {
                 allowFullScreen={true}
               ></iframe>
             )}
-            {userData._id === post.posterId && (
+            {(userData._id === post.posterId || userData.isAdmin) && (
               <div className="button-container">
                 <div onClick={() => setIsUpdated(!isUpdated)}>
                   <img src="./img/icons/edit.svg" alt="edit" />

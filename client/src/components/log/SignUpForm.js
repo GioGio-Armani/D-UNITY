@@ -35,6 +35,12 @@ const SignUpForm = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
 
+    // Sélectionner tous les éléments d'erreur et les réinitialiser
+    const errorElements = document.querySelectorAll(".error");
+    errorElements.forEach((element) => {
+      element.innerHTML = "";
+    });
+
     try {
       const terms = document.getElementById("terms");
       // Valider les données
@@ -71,51 +77,6 @@ const SignUpForm = () => {
       }
     }
   };
-
-  // const handleRegister = async (e) => {
-  //   e.preventDefault();
-  //   const terms = document.getElementById("terms");
-  //   const pseudoError = document.querySelector(".pseudo.error");
-  //   const emailError = document.querySelector(".email.error");
-  //   const passwordError = document.querySelector(".password.error");
-  //   const passwordConfirmError = document.querySelector(
-  //     ".password-confirm.error"
-  //   );
-  //   const termsError = document.querySelector(".terms.error");
-
-  //   passwordConfirmError.innerHTML = "";
-  //   termsError.innerHTML = "";
-
-  //   if (password !== controlPassword || !terms.checked) {
-  //     if (password !== controlPassword)
-  //       passwordConfirmError.innerHTML =
-  //         "Les mots de passe ne correspondent pas";
-  //     if (!terms.checked)
-  //       termsError.innerHTML = "Veuillez valider les conditions générales";
-  //   } else {
-  //     await axios({
-  //       method: "post",
-  //       url: `${process.env.REACT_APP_API_URL}api/user/register`,
-  //       withCredentials: true,
-  //       data: {
-  //         pseudo,
-  //         email,
-  //         password,
-  //       },
-  //     })
-  //       .then((res) => {
-  //         console.log(res);
-  //         setFormSubmit(true);
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //         pseudoError.innerHTML = err.response.data.errors.pseudo;
-  //         emailError.innerHTML = err.response.data.errors.email;
-  //         if (err.response.data.errors.password)
-  //           passwordError.innerHTML = err.response.data.errors.password;
-  //       });
-  //   }
-  // };
 
   return (
     <>
