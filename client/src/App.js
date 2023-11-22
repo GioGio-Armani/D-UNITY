@@ -24,6 +24,20 @@ function App() {
           console.log("No token");
         });
     };
+    const fetchCsrf = async () => {
+      await axios({
+        withCredentials: true,
+        method: "get",
+        url: `${process.env.REACT_APP_API_URL}csrf-token`,
+      })
+        .then((res) => {
+          axios.defaults.headers["X-CSRF-Token"] = res.data.csrfToken;
+        })
+        .catch((err) => {
+          console.log("No csrf token");
+        });
+    };
+    fetchCsrf();
     fetchToken();
   }, [uid, dispatch]);
 

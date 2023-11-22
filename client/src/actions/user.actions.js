@@ -10,8 +10,11 @@ export const GET_USER_ERRORS = "GET_USER_ERRORS";
 
 export const getUser = (uid) => {
   return (dispatch) => {
-    return axios
-      .get(`${process.env.REACT_APP_API_URL}api/user/${uid}`)
+    return axios({
+      withCredentials: true,
+      method: "get",
+      url: `${process.env.REACT_APP_API_URL}api/user/${uid}`,
+    })
       .then((res) => {
         dispatch({ type: GET_USER, payload: res.data });
       })
@@ -21,8 +24,12 @@ export const getUser = (uid) => {
 
 export const uploadPicture = (data, id) => {
   return (dispatch) => {
-    return axios
-      .post(`${process.env.REACT_APP_API_URL}api/user/upload`, data)
+    return axios({
+      withCredentials: true,
+      method: "post",
+      url: `${process.env.REACT_APP_API_URL}api/user/upload`,
+      data,
+    })
       .then((res) => {
         if (res.data.errors) {
           dispatch({ type: GET_USER_ERRORS, payload: res.data.errors });
@@ -42,6 +49,7 @@ export const uploadPicture = (data, id) => {
 export const updateBio = (userId, bio) => {
   return (dispatch) => {
     return axios({
+      withCredentials: true,
       method: "put",
       url: `${process.env.REACT_APP_API_URL}api/user/` + userId,
       data: { bio },
@@ -56,6 +64,7 @@ export const updateBio = (userId, bio) => {
 export const followUser = (followerId, idToFollow) => {
   return (dispatch) => {
     return axios({
+      withCredentials: true,
       method: "patch",
       url: `${process.env.REACT_APP_API_URL}api/user/follow/` + followerId,
       data: { idToFollow },
@@ -70,6 +79,7 @@ export const followUser = (followerId, idToFollow) => {
 export const unfollowUser = (followerId, idToUnfollow) => {
   return (dispatch) => {
     return axios({
+      withCredentials: true,
       method: "patch",
       url: `${process.env.REACT_APP_API_URL}api/user/unfollow/` + followerId,
       data: { idToUnfollow },
